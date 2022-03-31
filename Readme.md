@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи»
 
 - Студент: [Игорь Пушкарев](https://up.htmlacademy.ru/adaptive/25/user/1957975).
-- Наставник: `Владислав Доровлев`(https://htmlacademy.ru/profile/dorovlev).
+- Наставник: [Владислав Доровлев](https://htmlacademy.ru/profile/dorovlev).git
 
 ---
 
