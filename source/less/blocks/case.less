@@ -1,0 +1,118 @@
+.case {
+  background-color: @light_gray;
+}
+
+.case__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  padding: 25px 0 0 20px;
+}
+
+.case__text {
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  width: 280px;
+  padding: 40px 20px 0;
+  color: @special_dark-grey;
+}
+
+.module {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 0;
+}
+
+.module__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 124px;
+}
+
+.module__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.module__text {
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: @special_dark-grey;
+  width: 87px;
+  text-align: center;
+  padding-top: 9px;
+  position: relative;
+}
+
+.module__text::before {
+  content: "";
+  border: 1px solid #cdcdcd;
+  border-bottom-style: none;
+  border-radius: 3px;
+  width: 124px;
+  height: 56px;
+  position: absolute;
+  bottom: 15px;
+  right: -20px;
+}
+
+.case__price {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  padding: 20px 0 0;
+  text-align: center;
+}
+
+.case__img-cat {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.case__slider {
+  display: flex;
+  width: 209px;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding: 15px 0 40px;
+}
+
+.slider__style {
+  -webkit-appearance: none;
+  width: 86px;
+  height: 15px;
+  background: #ffffff;
+  border: 1px solid @special_grey;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.slider__style::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: @basic_green;
+  width: 36px;
+  height: 6px;
+  border-radius: 6px;
+}
+
+.slider__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
