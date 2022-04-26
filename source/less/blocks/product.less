@@ -1,0 +1,129 @@
+.product__card-list {
+  display: grid;
+  gap: 15px;
+}
+
+.product__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  display: block;
+  padding-top: 25px;
+  padding-bottom: 49px;
+  padding-left: 20px;
+}
+
+.product-card {
+  .width-product-card();
+  .grid-product-card();
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.product-card::before {
+  content: "";
+  background-color: @special_grey-2;
+  position: absolute;
+  width: 320px;
+  height: 1px;
+  top: 0;
+}
+
+.product-card__item {
+  align-self: center;
+  justify-self: center;
+  grid-area: 1 / 1 / 3 / 3;
+}
+
+.product-card__title {
+  .grid-product-card__title();
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: @special_dark-grey-2;
+}
+
+.product-card__discription {
+  .grid-roduct-card__discription();
+  display: flex;
+  flex-direction: column;
+  align-self: baseline;
+}
+
+.discription-list__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item__text {
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.product-card__button {
+  .grid-product-card__button();
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: @basic-white;
+}
+
+.show-card {
+  width: 320px;
+  text-align: center;
+  position: relative;
+}
+
+.show-card::before {
+  content: "";
+  background-color: @special_grey-2;
+  position: absolute;
+  width: 320px;
+  height: 1px;
+  top: 0;
+  left: 0;
+}
+
+.show-card__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #111111;
+  text-transform: uppercase;
+  padding-top: 89px;
+}
+
+.show-card__text {
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  padding-top: 8px;
+  padding-bottom: 21px;
+}
+
+.show-card__button {
+  background-color: @basic_grey;
+  width: 280px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: @special_dark-grey-2;
+}
+

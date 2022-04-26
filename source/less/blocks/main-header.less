@@ -1,0 +1,38 @@
+.main-header {
+  background-color: @basic-white;
+}
+
+.main-header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 18px;
+}
+
+.site-list {
+  text-align: center;
+}
+
+.site-list__item {
+  position: relative;
+}
+
+.site-list__item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #e6e6e6;
+  left: 0;
+}
+
+.list-header__text-header-form {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  display: block;
+  padding: 22px 20px 20px;
+  color: #000000;
+}
