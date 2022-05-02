@@ -9,12 +9,18 @@
   padding: 10px 20px 18px;
 }
 
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+}
+
 .site-list {
   text-align: center;
 }
 
 .site-list__item {
   position: relative;
+  list-style-type: none;
 }
 
 .site-list__item::before {
@@ -35,4 +41,125 @@
   display: block;
   padding: 22px 20px 20px;
   color: #000000;
+  text-decoration: none;
+}
+
+// tablet-width
+@media (min-width: @tablet-width) {
+  .main-header {
+    width: 708px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+  }
+
+  .main-nav__toggle {
+    display: none;
+  }
+
+  .main-header__wrapper {
+    width: 174px;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 30px;
+  }
+
+  .site-list {
+    display: flex;
+    justify-content: space-between;
+    width: 440px;
+  }
+
+  .site-list__item {
+    padding: 0;
+  }
+
+  .site-list__item::before {
+    display: none;
+  }
+
+  .list-header__text-header-form {
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .list-header__text-header-form::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: @basic_green;
+    content: "";
+  }
+
+  .list-header__text-header-form:hover {
+    opacity: 0.6;
+  }
+
+  .list-header__text-header-form:active {
+    opacity: 0.3;
+  }
+
+  .list-header__text-header-form:focus::after {
+    width: 100%;
+  }
+}
+
+//desctop-width
+@media (min-width: @desktop-width) {
+  .main-header {
+    width: 1240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 53px 110px 0 110px;
+  }
+
+  .main-nav {
+    z-index: 1;
+  }
+
+  .site-list {
+    display: flex;
+    justify-content: space-between;
+    width: 478px;
+  }
+
+  .list-header__text-header-form {
+    font-size: 20px;
+    line-height: 30px;
+    color: @basic-white;
+  }
+
+  .list-header__text-header-form::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: @basic-white;
+    content: "";
+    bottom: -8px;
+  }
+
+  .list-header__text-header-form:hover {
+    opacity: 0.6;
+  }
+
+  .list-header__text-header-form:active {
+    opacity: 0.3;
+  }
+
+  .list-header__text-header-form:focus::after {
+    width: 100%;
+  }
 }

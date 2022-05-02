@@ -5,32 +5,18 @@
   font-weight: 400;
 }
 
-a {
-  text-decoration: none;
+@media (min-width: @tablet-width) {
+  .page__body {
+    width: @tablet-width;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page__body {
+    width: @desktop-width;
+  }
 }
 
 .visually-hidden {
   display: none;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  list-style-type: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
-p {
-  margin: 0;
 }

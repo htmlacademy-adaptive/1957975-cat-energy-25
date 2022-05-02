@@ -1,5 +1,7 @@
-.case {
-  background-color: @light_gray;
+@media (max-width: @mobile-width) {
+  .tablet-cat {
+    display: none;
+  }
 }
 
 .case__title {
@@ -11,6 +13,7 @@
 }
 
 .case__text {
+  margin: 0;
   font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -22,6 +25,7 @@
 }
 
 .module {
+  margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -41,6 +45,8 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 24px;
+  position: relative;
+  top: 15px;
 }
 
 .module__text {
@@ -68,6 +74,7 @@
 }
 
 .case__price {
+  margin: 0;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -115,4 +122,193 @@
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
+}
+
+// media tablet
+@media (min-width: @tablet-width) {
+  .case {
+    position: relative;
+    background-color: @basic-white;
+  }
+
+  .case::before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: @basic_grey;
+  }
+
+  .case__title {
+    margin: 0;
+    font-size: 60px;
+    line-height: 60px;
+    padding: 43px 0 0 30px;
+  }
+
+  .case__text {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 63px 30px 0;
+    width: auto;
+  }
+
+  .module {
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .module__title {
+    font-size: 30px;
+    line-height: 37px;
+    position: relative;
+    top: 25px;
+  }
+
+  .module__text {
+    font-family: "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: @special_dark-grey;
+    width: 87px;
+    text-align: center;
+    padding-top: 9px;
+    position: relative;
+  }
+
+  .module__text::before {
+    content: "";
+    border: 1px solid #cdcdcd;
+    border-bottom-style: none;
+    border-radius: 3px;
+    width: 162px;
+    height: 56px;
+    position: absolute;
+    bottom: 15px;
+    right: -40px;
+  }
+
+  .module__list {
+    width: 162px;
+  }
+
+  .module__list:nth-child(1) {
+    margin-right: 50px;
+  }
+
+  .case__module {
+    display: flex;
+    padding: 54px  30px 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .case__price {
+    padding: 0;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 20px;
+    width: 172px;
+    text-align: end;
+  }
+
+  .case__img-cat .mobil-cat {
+    display: none;
+  }
+
+  .tablet-cat {
+    width: 591px;
+    height: 576px;
+    margin: auto;
+    z-index: 100;
+    position: relative;
+  }
+
+  .case__slider {
+    display: flex;
+    width: 679px;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 15px 0 40px;
+  }
+
+  .slider__style {
+    -webkit-appearance: none;
+    width: 426px;
+    height: 8px;
+    background: #dcdcdc;
+    border: 1px solid @special_grey;
+    box-sizing: border-box;
+    border-radius: 6px;
+  }
+
+  .slider__style::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #ffffff;
+    border: 1px solid #cdcdcd;
+    box-sizing: border-box;
+    width: 34px;
+    height: 34px;
+    border-radius: 60px;
+    position: relative;
+  }
+
+  .slider__text {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+// media desktop
+@media (min-width: @desktop-width) {
+  .case {
+    position: relative;
+    background-color: @basic-white;
+  }
+
+  .case::before {
+    height: 0;
+  }
+
+  .case__title {
+    margin: 0;
+    font-size: 60px;
+    line-height: 60px;
+    padding: 69px 0 0 110px;
+  }
+
+  .case__text {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 146px 0 0 110px;
+    width: 436px;
+  }
+
+  .case__module {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 69px 0 0 110px;
+    width: 366px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .case__price {
+    padding: 0;
+    display: flex;
+    font-size: 20px;
+    line-height: 20px;
+    width: 327px;
+    justify-content: space-between;
+    padding-top: 55px;
+  }
+
+  .case_fat_slim {
+    position: absolute;
+    top: 0;
+    left: 50%;
+  }
 }

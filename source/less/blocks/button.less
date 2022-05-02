@@ -1,12 +1,17 @@
-.padding-mobil() {
-  padding: 0 20px;
-}
-
 .button {
   background-color: @basic_green;
   width: 280px;
   height: 40px;
-  .padding-mobil();
   border: none;
   cursor: pointer;
+  text-decoration: none;
+}
+
+// button tablet
+@media (min-width: @tablet-width) {
+  .button {
+    width: 244px;
+    height: 54px;
+    padding: 0;
+  }
 }
