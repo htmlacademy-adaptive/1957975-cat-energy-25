@@ -1,3 +1,15 @@
+@media (max-width: @mobile-width) {
+  .wrapper-discription__img-tablet {
+    display: none;
+  }
+}
+
+@media (max-width: @mobile-width) {
+  .wrapper-discription__img-desktop {
+    display: none;
+  }
+}
+
 .main-container {
   display: flex;
   justify-content: center;
@@ -5,7 +17,7 @@
   align-items: center;
 }
 
-.main-container__img-background {
+.main-container__img-background-mobil {
   background-image: url("../../img/index-background-desktop.jpg");
   width: 320px;
   height: 302px;
@@ -14,7 +26,7 @@
   z-index: -1;
 }
 
-.img-background__color {
+.img-background__color-desktop {
   width: 320px;
   height: 302px;
   background-color: #6ab938;
@@ -40,7 +52,7 @@
   top: 124px;
 }
 
-.wrapper-discription__img {
+.wrapper-discription__img-mobile {
   padding: 29px 20px 3px;
   display: block;
 }
@@ -54,4 +66,183 @@
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+}
+
+// tablet-width
+@media (min-width: @tablet-width) and (max-width: @desktop-width) {
+  @media (min-width: @tablet-width) {
+    .wrapper-discription__img-mobile {
+      display: none;
+    }
+  }
+
+  @media (min-width: @tablet-width) and (max-width: @desktop-width) {
+    .wrapper-discription__img-desktop {
+      display: none;
+    }
+  }
+
+  .wrapper-discription__img-tablet {
+    position: relative;
+    right: 93px;
+    bottom: -30px;
+  }
+
+  .main-container {
+    display: block;
+  }
+
+  .main-container__wrapper {
+    padding-left: 117px;
+    position: relative;
+  }
+
+  .wrapper__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 60px;
+    color: #000000;
+    text-align: start;
+    width: 420px;
+    padding-top: 62px;
+  }
+
+  .main-container__img-background-mobil {
+    display: none;
+  }
+
+  .img-background__color-mobil {
+    display: none;
+  }
+
+  .wrapper-discription__slogan {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000000;
+    text-transform: uppercase;
+    width: 420px;
+    text-align: start;
+    padding-top: 41px;
+  }
+
+  .wrapper-discription__button {
+    position: absolute;
+    top: 300px;
+  }
+
+  .wrapper-discription__button:hover {
+    background: @basic_green-2;
+  }
+
+  .wrapper-discription__button:active {
+    background: @basic_green-2;
+    opacity: 0.3;
+  }
+
+  .button {
+    width: 244px;
+    height: 54px;
+  }
+}
+
+// desktop-width
+@media (min-width: @desktop-width) {
+  @media (min-width: @tablet-width) {
+    .wrapper-discription__img-tablet {
+      display: none;
+    }
+  }
+
+  @media (min-width: @mobile-width) {
+    .wrapper-discription__img-mobile {
+      display: none;
+    }
+  }
+
+  .main-container {
+    display: block;
+  }
+
+  .wrapper-discription__img-desktop {
+    position: relative;
+    left: 586px;
+    bottom: 130px;
+  }
+
+  .main-container__wrapper {
+    padding-left: 190px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .main-container__img-background-mobil {
+    display: block;
+  }
+
+  .img-background__color-mobil {
+    display: block;
+  }
+
+  .main-container__img-background-desktop {
+    background-image: url("../../img/index-background-desktop1.jpg");
+    width: 760px;
+    height: 694px;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 0;
+    left: 100%;
+    bottom: 144px;
+  }
+
+  .img-background__color-desktop {
+    width: 721px;
+    height: 694px;
+    background-color: #6ab938;
+    opacity: 0.85;
+  }
+
+  .wrapper__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 60px;
+    color: #000000;
+    text-align: start;
+    width: 420px;
+    padding-top: 62px;
+  }
+
+  .wrapper-discription__slogan {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000000;
+    text-transform: uppercase;
+    width: 420px;
+    text-align: start;
+    padding-top: 41px;
+  }
+
+  .wrapper-discription__button {
+    position: absolute;
+    top: 300px;
+  }
+
+  .wrapper-discription__button:hover {
+    background: @basic_green-2;
+  }
+
+  .wrapper-discription__button:active {
+    background: @basic_green-2;
+    opacity: 0.3;
+  }
+
+  .button {
+    width: 244px;
+    height: 54px;
+  }
 }
