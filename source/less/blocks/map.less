@@ -1,34 +1,20 @@
 
-@media (max-width: @mobile-width) {
-  .map__img-tablet {
-    display: none;
-  }
-  
-  .map__img-desktop {
-    display: none;
-  }
+.iframe {
+  border: none;
+  display: block;
+  width: 320px;
 }
 
 @media (min-width: @tablet-width) {
-  .map__img-mobil {
-    display: none;
-  }
-
-  .map__img-desktop {
-    display: none;
+  .iframe {
+    width: 768px;
   }
 }
 
 @media (min-width: @desktop-width) {
-  .map__img-mobil {
-    display: none;
-  }
-
-  .map__img-tablet {
-    display: none;
-  }
-
-  .case__map {
-    padding-top: 170px;
+  .iframe {
+    width: 1440px;
+    padding-top: 120px;
+    background-color: @basic_grey;
   }
 }

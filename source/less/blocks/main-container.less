@@ -69,14 +69,14 @@
 }
 
 // tablet-width
-@media (min-width: @tablet-width) and (max-width: @desktop-width) {
+@media (min-width: @tablet-width) {
   @media (min-width: @tablet-width) {
     .wrapper-discription__img-mobile {
       display: none;
     }
   }
 
-  @media (min-width: @tablet-width) and (max-width: @desktop-width) {
+  @media (min-width: @tablet-width) {
     .wrapper-discription__img-desktop {
       display: none;
     }
@@ -168,8 +168,8 @@
 
   .wrapper-discription__img-desktop {
     position: relative;
-    left: 586px;
-    bottom: 130px;
+    left: 395px;
+    bottom: 216px;
   }
 
   .main-container__wrapper {
@@ -193,15 +193,16 @@
     background-repeat: no-repeat;
     position: absolute;
     z-index: 0;
-    left: 100%;
-    bottom: 144px;
+    left: 718px;
+    bottom: -331px;
   }
 
   .img-background__color-desktop {
-    width: 721px;
+    min-width: 721px;
     height: 694px;
     background-color: #6ab938;
     opacity: 0.85;
+    width: 100vh;
   }
 
   .wrapper__title {
