@@ -1,29 +1,23 @@
-@media (max-width: @mobile-width) {
-  .wrapper-discription__img-tablet {
-    display: none;
-  }
-}
-
-@media (max-width: @mobile-width) {
-  .wrapper-discription__img-desktop {
-    display: none;
-  }
-}
-
 .main-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: baseline;
 }
 
 .main-container__img-background-mobil {
-  background-image: url("../../img/index-background-desktop.jpg");
   width: 320px;
   height: 302px;
-  background-repeat: no-repeat;
   position: absolute;
   z-index: -1;
+}
+
+.main-container__img-background-mobil img {
+  max-width: 100%;
+  width: 420px;
+  height: 302px;
+  object-fit: cover;
+  position: absolute;
 }
 
 .img-background__color-desktop {
@@ -48,7 +42,7 @@
   color: @basic-white;
   text-align: center;
   margin: 0;
-  padding: 25px 0 0;
+  padding: 20px 0 0;
   top: 124px;
 }
 
@@ -66,34 +60,30 @@
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+
+  &:hover {
+    background-color: @basic_green-2;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
 }
 
 // tablet-width
 @media (min-width: @tablet-width) {
-  @media (min-width: @tablet-width) {
-    .wrapper-discription__img-mobile {
-      display: none;
-    }
-  }
-
-  @media (min-width: @tablet-width) {
-    .wrapper-discription__img-desktop {
-      display: none;
-    }
-  }
-
   .wrapper-discription__img-tablet {
     position: relative;
-    right: 93px;
-    bottom: -30px;
+    right: 109px;
+    bottom: 8px;
   }
 
-  .main-container {
-    display: block;
+  .main-container__img-background-mobil {
+    display: none;
   }
 
   .main-container__wrapper {
-    padding-left: 117px;
+    padding-left: 120px;
     position: relative;
   }
 
@@ -106,10 +96,6 @@
     text-align: start;
     width: 420px;
     padding-top: 62px;
-  }
-
-  .main-container__img-background-mobil {
-    display: none;
   }
 
   .img-background__color-mobil {
@@ -130,16 +116,17 @@
 
   .wrapper-discription__button {
     position: absolute;
-    top: 300px;
-  }
+    top: 293px;
+    font-size: 20px;
+    line-height: 20px;
 
-  .wrapper-discription__button:hover {
-    background: @basic_green-2;
-  }
+    &:hover {
+      background-color: @basic_green-2;
+    }
 
-  .wrapper-discription__button:active {
-    background: @basic_green-2;
-    opacity: 0.3;
+    &:active {
+      color: rgba(255, 255, 255, 0.3);
+    }
   }
 
   .button {
@@ -150,36 +137,41 @@
 
 // desktop-width
 @media (min-width: @desktop-width) {
-  @media (min-width: @tablet-width) {
-    .wrapper-discription__img-tablet {
-      display: none;
-    }
-  }
-
-  @media (min-width: @mobile-width) {
-    .wrapper-discription__img-mobile {
-      display: none;
-    }
-  }
-
-  .main-container {
+  .main-container__img-background-mobil {
+    width: 320px;
+    height: 302px;
+    position: absolute;
+    z-index: -1;
     display: block;
+    right: -590px;
+    bottom: 201px;
+  }
+
+  .main-container__img-background-mobil img {
+    max-width: 100%;
+    width: 760px;
+    height: 694px;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+    left: 37px;
+    top: 532px;
   }
 
   .wrapper-discription__img-desktop {
-    position: relative;
-    left: 395px;
-    bottom: 216px;
+    position: absolute;
+    left: 580px;
+    bottom: -280px;
+    padding: 0;
   }
 
   .main-container__wrapper {
-    padding-left: 190px;
+    padding-left: 264px;
     position: relative;
-    display: inline-block;
-  }
-
-  .main-container__img-background-mobil {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    width: 1200px;
   }
 
   .img-background__color-mobil {
@@ -187,14 +179,11 @@
   }
 
   .main-container__img-background-desktop {
-    background-image: url("../../img/index-background-desktop1.jpg");
     width: 760px;
     height: 694px;
-    background-repeat: no-repeat;
     position: absolute;
     z-index: 0;
-    left: 718px;
-    bottom: -331px;
+    left: 700px;
   }
 
   .img-background__color-desktop {
@@ -202,7 +191,19 @@
     height: 694px;
     background-color: #6ab938;
     opacity: 0.85;
-    width: 100vh;
+    width: 760px;
+    position: relative;
+    left: 37px;
+    top: 532px;
+  }
+
+  .img-background__color-desktop::after {
+    content: "";
+    position: absolute;
+    height: 694px;
+    background-color: #6ab938;
+    right: calc(((100vw - 1440px) / 2) * -1);
+    width: calc((100vw - 1440px) / 2);
   }
 
   .wrapper__title {
@@ -231,15 +232,14 @@
   .wrapper-discription__button {
     position: absolute;
     top: 300px;
-  }
 
-  .wrapper-discription__button:hover {
-    background: @basic_green-2;
-  }
+    &:hover {
+      background-color: @basic_green-2;
+    }
 
-  .wrapper-discription__button:active {
-    background: @basic_green-2;
-    opacity: 0.3;
+    &:active {
+      color: rgba(255, 255, 255, 0.3);
+    }
   }
 
   .button {

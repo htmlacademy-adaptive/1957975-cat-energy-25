@@ -3,6 +3,7 @@
   border: none;
   display: block;
   width: 320px;
+  height: 362px;
 }
 
 @media (min-width: @tablet-width) {
@@ -16,5 +17,23 @@
     width: 1440px;
     padding-top: 120px;
     background-color: @basic_grey;
+  }
+
+  .case__map {
+    position: relative;
+    z-index: -1;
+    height: 100%;
+  }
+
+  .case__map::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+    background-color: @basic_grey;
+    top: 0;
+    min-width: 110px;
+    left: calc((50vw - 720px) * -1);
+    width: 100vw;
   }
 }

@@ -83,6 +83,11 @@
 .copyright__text {
   margin: 0;
   color: @special_dark-grey;
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
 }
 
 .copyright__text:hover {
@@ -138,5 +143,18 @@
   .main-footer {
     width: 1240px;
     padding: 58px 100px;
+    position: relative;
+  }
+
+  .main-footer::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+    background-color: @basic_grey;
+    top: 0;
+    min-width: 110px;
+    left: calc((50vw - 720px) * -1);
+    width: 100vw;
   }
 }
