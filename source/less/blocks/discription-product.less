@@ -8,7 +8,6 @@
   font-weight: 400;
   font-size: 36px;
   line-height: 40px;
-  padding-top: 20px;
   padding-left: 21px;
   margin: 0;
 }
@@ -17,7 +16,8 @@
   margin: 0;
   padding: 42px 0 53px 100px;
   display: grid;
-  gap: 15px;
+  gap: 26px;
+  counter-reset: discription;
 }
 
 .list-item {
@@ -25,7 +25,11 @@
   list-style-type: none;
 }
 
-.list-item::before {
+.list-item-counter {
+  counter-increment: discription;
+}
+
+.list-item__text::before {
   background-color: @basic_green;
   position: absolute;
   height: 60px;
@@ -33,6 +37,7 @@
   content: "";
   display: block;
   left: -80px;
+  top: 0;
 }
 
 .list-item:nth-child(1)::after {
@@ -95,63 +100,47 @@
 // tablet-width
 @media (min-width: @tablet-width) {
   .discription-product__list {
-    width: 633px;
-    display: flex;
+    min-width: 646px;
+    display: grid;
     padding: 0;
+    padding-bottom: 77px;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 120px;
+    grid-row-gap: 40px;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 0;
   }
 
   .discription-product__title {
-    font-size: 36px;
-    line-height: 40px;
-    padding-top: 41px;
+    min-width: 375px;
+    font-size: 60px;
+    line-height: 60px;
+    padding-top: 50px;
     padding-left: 30px;
   }
 
   .list-item {
     min-height: 280px;
+    width: 233px;
+    padding-left: 31px;
   }
 
-  .list-item__text {
-    font-size: 16px;
-    line-height: 24px;
-    position: relative;
-    top: 100px;
-  }
-
-  .list-item:nth-child(odd) {
-    padding-left: 30px;
-  }
-
-  .list-item:nth-child(1) {
-    width: 230px;
-  }
-
-  .list-item:nth-child(2) {
-    width: 246px;
-  }
-
-  .list-item:nth-child(3) {
-    width: 247px;
-    margin-top: 37px;
-  }
-
-  .list-item:nth-child(4) {
-    width: 249px;
-    margin-top: 37px;
-  }
-
-  .list-item::before {
+  .list-item__text::before {
     background-color: @basic_green;
     position: relative;
     height: 80px;
     width: 80px;
     content: "";
     display: block;
-    left: 0;
-    top: 30px;
+    left: 1px;
+    top: -27px;
+  }
+
+  .list-item__text {
+    font-size: 16px;
+    line-height: 24px;
+    position: relative;
+    top: 97px;
   }
 
   .list-item:nth-child(1)::after {
@@ -162,8 +151,8 @@
     width: 30px;
     height: 32px;
     display: block;
-    right: 175px;
-    top: 53px;
+    right: 180px;
+    top: 93px;
   }
 
   .list-item:nth-child(2)::after {
@@ -174,8 +163,8 @@
     width: 30px;
     height: 32px;
     display: block;
-    right: 190px;
-    top: 53px;
+    right: 180px;
+    top: 93px;
   }
 
   .list-item:nth-child(3)::after {
@@ -186,8 +175,8 @@
     width: 30px;
     height: 32px;
     display: block;
-    right: 190px;
-    top: 53px;
+    right: 180px;
+    top: 93px;
   }
 
   .list-item:nth-child(4)::after {
@@ -198,12 +187,12 @@
     width: 30px;
     height: 32px;
     display: block;
-    right: 195px;
-    top: 53px;
+    right: 180px;
+    top: 93px;
   }
 
-  .list-item__text--one::before {
-    content: "1";
+  .list-item-counter::before {
+    content: counter(discription);
     position: absolute;
     font-family: "Oswald", sans-serif;
     font-style: normal;
@@ -211,54 +200,11 @@
     font-size: 280px;
     line-height: 280px;
     color: @basic_grey;
-    bottom: -20px;
-    left: 120px;
-    z-index: -1;
-  }
-
-  .list-item__text--two::before {
-    content: "2";
-    position: absolute;
-    font-family: "Oswald", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 280px;
-    line-height: 280px;
-    color: @basic_grey;
-    bottom: -20px;
-    left: 120px;
-    z-index: -1;
-  }
-
-  .list-item__text--three::before {
-    content: "3";
-    position: absolute;
-    font-family: "Oswald", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 280px;
-    line-height: 280px;
-    color: @basic_grey;
-    bottom: -20px;
-    left: 120px;
-    z-index: -1;
-  }
-
-  .list-item__text--four::before {
-    content: "4";
-    position: absolute;
-    font-family: "Oswald", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 280px;
-    line-height: 280px;
-    color: @basic_grey;
-    bottom: -20px;
-    left: 120px;
+    bottom: -29px;
+    left: 146px;
     z-index: -1;
   }
 }
-
 
 //desktop-width
 @media (min-width: @desktop-width) {
@@ -284,7 +230,7 @@
 
   .list-item:nth-child(1) {
     padding: 0;
-    padding-right: 94px;
+    padding-right: 79px;
   }
 
   .list-item:nth-child(2) {
@@ -311,8 +257,8 @@
     width: 30px;
     height: 32px;
     display: block;
-    right: 270px;
-    top: 53px;
+    right: 255px;
+    top: 93px;
   }
 
   .list-item:nth-child(2)::after {
@@ -323,8 +269,8 @@
     width: 30px;
     height: 32px;
     display: block;
-    right: 270px;
-    top: 53px;
+    right: 255px;
+    top: 93px;
   }
 
   .list-item:nth-child(3)::after {
@@ -335,7 +281,7 @@
     width: 30px;
     height: 32px;
     display: block;
-    right: 270px;
-    top: 53px;
+    right: 255px;
+    top: 93px;
   }
 }
