@@ -32,7 +32,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px 0;
+  padding: 19px 22px 0;
 }
 
 .module__list {
@@ -57,7 +57,7 @@
   font-weight: 400;
   font-size: 12px;
   color: @special_dark-grey;
-  width: 87px;
+  width: 82px;
   text-align: center;
   padding-top: 9px;
   position: relative;
@@ -97,7 +97,7 @@
   align-items: center;
   justify-content: space-between;
   margin: auto;
-  padding: 0 0 40px;
+  padding: 4px 0 40px;
 }
 
 .slider__style {
@@ -109,18 +109,6 @@
   box-sizing: border-box;
   border-radius: 6px;
   position: relative;
-}
-
-.slider__style::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  background-color: @basic_green;
-  position: absolute;
-  border-radius: 50%;
-  z-index: 5;
-  left: 208px;
-  bottom: -1px;
 }
 
 .slider__style::-webkit-slider-thumb {
@@ -155,6 +143,7 @@
     position: absolute;
     content: "";
     height: 2px;
+    top: -5px;
     width: 100%;
     background-color: @basic_grey;
   }
@@ -163,7 +152,19 @@
     margin: 0;
     font-size: 60px;
     line-height: 60px;
-    padding: 45px 0 0 32px;
+    padding: 38px 0 0 32px;
+  }
+
+  .slider__style::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: @basic_green;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 5;
+    left: 208px;
+    bottom: -1px;
   }
 
   .case__text {
@@ -328,6 +329,16 @@
     }
   }
 
+  .tablet-cat {
+    width: 591px;
+    height: 511px;
+    margin: auto;
+    z-index: 100;
+    position: relative;
+    padding-top: 42px;
+    padding-left: 70px;
+  }
+
   .case__text {
     font-size: 16px;
     line-height: 24px;
@@ -338,20 +349,19 @@
   .case__module {
     display: flex;
     flex-wrap: wrap;
-    padding: 69px 0 0 110px;
+    padding: 59px 0 0 115px;
     width: 366px;
     justify-content: space-between;
     align-items: center;
   }
 
   .case__price {
-    padding: 0;
     display: flex;
     font-size: 20px;
     line-height: 20px;
     width: 327px;
     justify-content: space-between;
-    padding-top: 55px;
+    padding: 43px 0 0;
   }
 
   .case_fat_slim {
