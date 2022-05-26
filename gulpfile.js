@@ -17,7 +17,7 @@ import browser from 'browser-sync';
 //  1. //НАЙТИ НУЖНЫЕ  НАМ ФАЙЛЫ
 //  2. //СДЕЛАЙ СНИМИ ЧТО-НИБУДЬ
 //  3. //ПОЛОЖИ В НУЖНУЮ ПАПКУ
-export const styles = () => {
+const styles = () => {
   return gulp.src('source/less/style.less', { sourcemaps: true })  //  1. // style.less
     .pipe(plumber()) //  2. //обработка ошибок
     .pipe(less())    // style.less -> style.css превращает less в css
@@ -27,17 +27,18 @@ export const styles = () => {
     ]))
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('build/css', { sourcemaps: '.' })) //  3. // положи эти файлы в папку source/css и положи карты кодат в эту же папку { sourcemaps: '.' }
-    .pipe(browser.stream());
+    .pipe(browser.stream()
+  );
 }
 
 //  HTML
 // мы хотим минифицировать весь html. идем в гугл  и ищем gulp minify html переходим по ссылкам  до установкипакетов с гита (npm install html-minifier -g)
 // что бы испольозвать библиотеку которую мы  установили, идем опять в гугл на гит откуда, скачивали библиотеку (https://github.com/jonschlinkert/gulp-htmlmin) смотрим вкладку (Usage)
 // export const имя  файла (export нужен на статии создания зачади что бы проверить работает ли она )
-const html = () => {
+export const html = () => {
   return gulp.src('source/*.html')                              // gulp возьми все  вайлы *.html в папке source
   .pipe(htmlmin( { collapseWhitespace: true }))                // сделай минификацию //
-  .pipe(gulp.dest('build'));                                  // положи их в папку source
+  .pipe(gulp.dest('build'));                                  // положи их в папку build
 }
 
 
@@ -68,10 +69,10 @@ const createWebp = () => {
 }
 
 // SVG
-const svg = () =>
-gulp.src('source/img/**/*.{svg}')
-  .pipe(svgo())
-  .pipe(gulp.dest('build/img'));
+export const svg = () =>
+  gulp.src('source/img/svg/*.svg')
+    .pipe(svgo())
+    .pipe(gulp.dest('build/img/svg'));
 
 const sprite = () => {
   return gulp.src('source/img/icons/*.svg')
@@ -85,7 +86,13 @@ const sprite = () => {
 
 // Copy
 const copy = (done) => {
-  gulp.src(['source/fonts/*.{woff2,woff}','source/*.ico',], {
+  gulp.src([
+    'source/fonts/*.{woff2,woff}',
+    'source/*.ico',
+    'source/manifest.webmanifest',
+    'source/css/normalize.css',
+  ],
+    {
     base: 'source'
   })
     .pipe(gulp.dest('build'))
