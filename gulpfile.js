@@ -15,14 +15,14 @@ import browser from 'browser-sync';
 
 // Styles
 //  1. //НАЙТИ НУЖНЫЕ  НАМ ФАЙЛЫ
-//  2. //СДЕЛАЙ СНИМИ ЧТО-НИБУДЬ
+//  2. //СДЕЛАЙ С НИМИ ЧТО-НИБУДЬ
 //  3. //ПОЛОЖИ В НУЖНУЮ ПАПКУ
 const styles = () => {
   return gulp.src('source/less/style.less', { sourcemaps: true })  //  1. // style.less
     .pipe(plumber()) //  2. //обработка ошибок
     .pipe(less())    // style.less -> style.css превращает less в css
     .pipe(postcss([  // приходит style.css
-      autoprefixer(), // style.css -> style.css[prefix]  уже приходит css с префиксом . Тут мы скачали установмили пакет с  минификацией npm i -D postcss-csso
+      autoprefixer(), // style.css -> style.css[prefix]  уже приходит css с префиксом . Тут мы скачали установмили пакет с минификацией npm i -D postcss-csso
       csso()          // style.css[prefix] -> style.css[prefix, min]
     ]))
     .pipe(rename('style.min.css'))
